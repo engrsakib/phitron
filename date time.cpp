@@ -1,0 +1,5 @@
+// _Created :  ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR} ||   ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
+			"    // _File    :  ${TM_FILENAME}",
+			"    //Writer    :  Md. Nazmus Sakib",
+			"    /* Enter your code here. Read input from STDIN. Print output to STDOUT */",
+			"	//اللهم صل على سيدنا محمدن النبى الامى وآله وسلم",
