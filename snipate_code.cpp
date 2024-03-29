@@ -17,7 +17,8 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"",
-			"#define br cout << \"\\n\"",
+			"#define br \"\\n\"",
+			"#define ll long long",
 			"#define yes cout << \"YES\\n\"",
 			"#define no cout << \"NO\\n\"",
 			"using namespace std;",
