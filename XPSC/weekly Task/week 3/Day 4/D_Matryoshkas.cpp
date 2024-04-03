@@ -35,18 +35,20 @@ int main()
            // cout << mp[v[i]] << " ";
            st.insert(v[i]);
            st.insert(v[i] + 1);
+           
         }
         int a = 0;
         ll ans = 0;
         for(ll x : st)
         {
+           // cout << x << " ";
             int xx = mp[x];
-           // cout << xx << " ";
+            cout << xx << " ";
            ans += max(0, xx - a);
            a = xx;
            //cout << ans << " xx " << xx << " a " << a << " " << endl;
         }
-        cout << ans << br;
+        cout << " " << br;
     }
     return 0;
 }
