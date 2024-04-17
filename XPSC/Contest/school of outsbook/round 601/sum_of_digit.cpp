@@ -32,7 +32,6 @@ int main()
         ll N;
         cin >> N;
 
-        // Calculate the sum of digits for each number from 1 to N
         ll totalSum = 0;
         ll i = 1;
         while (i <= N)
@@ -41,7 +40,6 @@ int main()
             i++;
         }
 
-        // Output the result
         cout << "Case " << t << ": " << totalSum << endl;
     }
     return 0;
