@@ -8,31 +8,28 @@ using namespace std;
 
 int main()
 {
-    // _Created :  18 April 2024 ||   00:07:46
-    // _File    :  sum_of_digit.cpp
+    // _Created :  18 April 2024 ||   16:07:45
+    // _File    :  print_alpha.cpp
     // Writer    :  Md. Nazmus Sakib
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     // اللهم صل على سيدنا محمدن النبى الامى وآله وسلم
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    int T;
-    cin >> T;
-
-    for (ll t = 1; t <= T; t++)
+    int a;
+    while (cin >> a)
     {
-        ll n;
-        cin >> n;
-
-        ll totalSum = 0;
-        ll i = 1;
-        while (i <= n)
+        if (a != 0)
         {
-            totalSum += i % 10;
-            totalSum += i / 10;
-            i++;
+            for (int i = 1; i <= a; i++)
+            {
+                cout << char('a' + i - 1) << " ";
+            }
+            cout << br;
         }
-
-        cout << "Case " << t << ": " << totalSum << endl;
+        else
+        {
+            cout << "0\n";
+        }
     }
     return 0;
 }
