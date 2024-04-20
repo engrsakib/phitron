@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron",
-      "program": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/build/Debug/outDebug",
+      "cwd": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/XPSC/weekly Task/week 5/day 2",
+      "program": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/XPSC/weekly Task/week 5/day 2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
