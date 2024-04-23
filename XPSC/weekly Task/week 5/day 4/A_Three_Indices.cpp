@@ -28,17 +28,20 @@ head:
             cin >> v[i];
         }
         ll i = 2;
+        bool found = false;
         while (i <= n - 1)
         {
             if (v[i] > v[i - 1] and v[i] > v[i + 1])
             {
                 cout << "YES" << endl;
                 cout << i - 1 << " " << i << " " << i + 1 << endl;
-                goto head;
+                found = true;
+                break;
             }
             i++;
         }
-        cout << "NO" << endl;
+        if (!found)
+            cout << "NO" << endl;
     }
     return 0;
 }
