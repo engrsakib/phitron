@@ -12,7 +12,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"1 Cpp programming": {
+	"1": {
 		"prefix": "cpplang",
 		"body": [
 			"#include <bits/stdc++.h>",
@@ -23,20 +23,34 @@
 			"#define no cout << \"NO\\n\"",
 			"using namespace std;",
 			"",
+			"class Solution",
+			"{",
+			"public:",
+			"    void solve()",
+			"    {",
+			"        $0",
+			"    }",
+			"};",
 			"int main()",
 			"{",
 			"    // _Created :  ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR} ||   ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
 			"    // _File    :  ${TM_FILENAME}",
-			"    //Writer    :  Md. Nazmus Sakib",
+			"    //Writer    :  Md. Nazmus Sakib(engrsakib)",
 			"    /* Enter your code here. Read input from STDIN. Print output to STDOUT */",
-			"	//اللهم صل على سيدنا محمدن النبى الامى وآله وسلم",
+		  "	//اللهم صل على سيدنا محمدن النبى الامى وآله وسلم",
 			"    ios::sync_with_stdio(false);",
 			"    cin.tie(NULL);",
-			"    $0",
+			"    ll t;",
+			"    cin >> t;",
+			"    while (t--)",
+			"    {",
+			"        Solution obj;",
+			"        obj.solve();",
+			"    }",
 			"    return 0;",
 			"}"
 		],
-		"description": "1 Cpp programming"
+		"description": "1"
 	},
 	"2 Singly Linked List": {
 		"prefix": "node",
