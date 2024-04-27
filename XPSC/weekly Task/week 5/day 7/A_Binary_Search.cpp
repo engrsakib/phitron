@@ -11,45 +11,51 @@ class Solution
 public:
     void solve()
     {
-         ll n, k;
-    cin >> n >> k;
+        ll n, k;
+        cin >> n >> k;
 
-    vector<ll> arr(n);
-    for (ll i = 0; i < n; i++) 
-    {
-        cin >> arr[i];
-    }
+        vector<ll> arr(n);
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
 
-    
-    sort(arr.begin(), arr.end());
+        sort(arr.begin(), arr.end());
 
-    for (ll i = 0; i < k; i++) 
-    
-        ll q;
-        cin >> q;
+        for (ll i = 0; i < k; i++)
+        {
+            ll q;
+            cin >> q;
 
-        
-        ll left = 0, right = n - 1;
-        bool found = false;
-        while (left <= right) {
-            ll mid = left + (right - left) / 2;
-            if (arr[mid] == q) {
-                found = true;
-                break;
-            } else if (arr[mid] < q) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
+            ll left = 0, right = n - 1;
+            bool found = false;
+            while (left <= right)
+            {
+                ll mid = left + (right - left) / 2;
+                if (arr[mid] == q)
+                {
+                    found = true;
+                    break;
+                }
+                else if (arr[mid] < q)
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    right = mid - 1;
+                }
+            }
+
+            if (found)
+            {
+                yes;
+            }
+            else
+            {
+                no;
             }
         }
-
-        
-        if (found) {
-            cout << "YES\n";
-        } else {
-            cout << "NO\n";
-        }
-    
     }
 };
 int main()
