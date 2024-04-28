@@ -11,8 +11,8 @@ class Solution
 public:
     void solve()
     {
-        int n = 0;
-        ll t = 0;
+        int n;
+        ll t;
         cin >> n >> t;
         vector<ll> time(n);
 
