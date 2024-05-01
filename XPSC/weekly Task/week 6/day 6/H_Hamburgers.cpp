@@ -18,6 +18,7 @@ public:
         ll ps;
         ll pc;
         ll taka;
+       
         string str;
         cin >> str;
         cin >> nb >> ns >> nc;
@@ -31,11 +32,8 @@ public:
         int i = 0;
         while (i < str.size())
         {
-            if (str[i] == 'B')
-            {
-                b++;
-            }
-            else if (str[i] == 'S')
+            
+            if (str[i] == 'S')
             {
                 s++;
             }
@@ -43,11 +41,15 @@ public:
             {
                 c++;
             }
+            else if (str[i] == 'B')
+            {
+                b++;
+            }
             i++;
         }
 
         ll l = 0;
-        ll h = 1e15;
+        ll h = 1e18;
         ll ans = 0;
         ll Zero = 0;
         while (l <= h)
@@ -58,9 +60,9 @@ public:
             ll y = max(Zero, s * mid - ns);
             ll z = max(Zero, c * mid - nc);
 
-            ll costr = pb * x + ps * y + pc * z;
+            ll cost = pb * x + ps * y + pc * z;
 
-            if (costr > taka)
+            if (cost > taka)
             {
                 h = mid - 1;
             }
