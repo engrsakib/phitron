@@ -60,7 +60,6 @@ public:
         if (flag)
         {
             no;
-            return;
         }
 
         (initial_deff == -1 or zero_deff <= initial_deff) ? yes : no;
