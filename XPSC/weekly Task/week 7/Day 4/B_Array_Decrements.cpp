@@ -62,7 +62,14 @@ public:
             no;
         }
 
-        (initial_deff == -1 or zero_deff <= initial_deff) ? yes : no;
+        if (initial_deff == -1 || zero_deff <= initial_deff)
+        {
+            yes;
+        }
+        else
+        {
+            no;
+        }
     }
 };
 int main()
