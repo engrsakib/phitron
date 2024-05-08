@@ -60,6 +60,7 @@ public:
         if (flag)
         {
             no;
+            continue;
         }
 
         if (initial_deff == -1 || zero_deff <= initial_deff)
