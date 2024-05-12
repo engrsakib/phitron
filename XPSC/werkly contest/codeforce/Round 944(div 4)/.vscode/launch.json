@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/XPSC/personal pactrice/school.outsbook/Volume - 2 (200 - 258)",
-      "program": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/XPSC/personal pactrice/school.outsbook/Volume - 2 (200 - 258)/build/Debug/outDebug",
+      "cwd": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/XPSC/werkly contest/codeforce/Round 944(div 4)",
+      "program": "e:/@phitron/New folder (3)/@Phytron Course/Class/semester 3/phitron/XPSC/werkly contest/codeforce/Round 944(div 4)/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
