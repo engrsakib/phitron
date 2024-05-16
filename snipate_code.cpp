@@ -31,7 +31,7 @@
 			"        $0",
 			"    }",
 			"};",
-			"int main()",
+			"signed main()",
 			"{",
 			"    // _Created :  ${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR} ||   ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
 			"    // _File    :  ${TM_FILENAME}",
