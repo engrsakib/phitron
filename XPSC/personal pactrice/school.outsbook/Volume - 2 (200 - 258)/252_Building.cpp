@@ -11,26 +11,18 @@ class Solution
 public:
     void solve()
     {
-        int M, N, D, P, Q, T;
-        cin >> M >> N >> D >> P >> Q >> T;
-
-        int total_person_P = M * N * P;
-        int total_days_P = M * N * D;
-        long long total_charge_P = total_person_P * T;
-
-        cout << "Total Person : " << total_person_P << endl;
-        cout << "Total Days : " << total_days_P << endl;
-        cout << "Total Charge : " << total_charge_P << endl;
-
+        ll m, n, d, p, q, t;
+        cin >> m >> n >> d >> p >> q >> t;
+        ll tot_d = m * n * d;
+        cout << "Person : " << p << endl;
+        cout << "Days : " << tot_d << " Days" << endl;
+        cout << "Charge : " << p * t * tot_d << " Taka" << endl;
         cout << endl;
 
-        int total_person_Q = M * N * (P + Q);
-        int total_days_Q = M * N * D * P / (P + Q);
-        long long total_charge_Q = total_person_Q * T;
-
-        cout << "Total Person : " << total_person_Q << endl;
-        cout << "Total Days : " << total_days_Q << endl;
-        cout << "Total Charge : " << total_charge_Q << endl;
+        ll tot_d2 = tot_d * p / (p + q);
+        cout << "Person : " << p + q << endl;
+        cout << "Days : " << tot_d2 << " Days" << endl;
+        cout << "Charge : " << (p + q) * t * tot_d2 << " Taka" << endl;
     }
 };
 signed main()

@@ -1,22 +1,38 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
+#define br "\n"
+#define ll long long
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 using namespace std;
 
-int main()
+class Solution
 {
-    int M, P, C, D;
-
-    while (cin >> M >> P >> C >> D)
+public:
+    void solve()
     {
-        // Calculate the area of the farm field
-        int area = (M * (C + 1)) + D;
-
-        // Calculate the number of days Ramij initially planned to work
-        int planned_days = area / P + (area % P != 0 ? 1 : 0);
-
-        // Output the results
-        cout << area << " " << planned_days << endl;
+        ll m, p, c, d;
+        cin >> m >> p >> c >> d;
+        ll day = (p * c + d) / (m - p);
+        ll area = day * m;
+        cout << day << " " << area << endl;
     }
-
+};
+signed main()
+{
+    // _Created :  19 May 2024 ||   22:57:33
+    // _File    :  221 - Farming.cpp
+    // Writer    :  Md. Nazmus Sakib(engrsakib)
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    // اللهم صل على سيدنا محمدن النبى الامى وآله وسلم
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll t = 1;
+    // cin >> t;
+    while (t--)
+    {
+        Solution obj;
+        obj.solve();
+    }
     return 0;
 }
