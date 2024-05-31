@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form label, .form input, .form button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Bank</h1>
+        <div class="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="customerId">Customer ID:</label>
+            <input type="text" id="customerId" placeholder="Enter your customer ID">
+            <button onclick="login()">Login</button>
+        </div>
+        <div id="output" class="output"></div>
+    </div>
+
+    <script>
+        function login() {
+            var name = document.getElementById("name").value;
+            var customerId = document.getElementById("customerId").value;
+            var output = document.getElementById("output");
+
+            output.innerHTML = "<p>Welcome " + name + "</p>" +
+                                "<p>Your ID: " + customerId + "</p>" +
+                                "<p>Choose an option:</p>" +
+                                "<button onclick='checkBalance()'>Check Balance</button>" +
+                                "<button onclick='deposit()'>Deposit Amount</button>" +
+                                "<button onclick='withdraw()'>Withdraw Amount</button>" +
+                                "<button onclick='prevTransaction()'>Previous Transaction</button>" +
+                                "<button onclick='exit()'>Exit</button>";
+        }
+
+        function checkBalance() {
+            // Implement code to check balance
+        }
+
+        function deposit() {
+            // Implement code for deposit
+        }
+
+        function withdraw() {
+            // Implement code for withdraw
+        }
+
+        function prevTransaction() {
+            // Implement code to display previous transaction
+        }
+
+        function exit() {
+            alert("Thank you for using our banking services");
+            // Implement code to exit or redirect to homepage
+        }
+    </script>
+</body>
+</html>

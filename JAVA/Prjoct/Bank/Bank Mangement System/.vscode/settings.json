@@ -1,0 +1,28 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "src/J calender/jcalendar-tz-1.3.3-4.jar",
+    "src/mySQL/mysql-connector-java-8.0.28.jar",
+    "e:\\@phitron\\New folder (3)\\@Phytron Course\\Class\\semester 4\\JAVA\\Prjoct\\Bank\\mySQL\\mysql-connector-java-8.0.28.jar"
+  ],
+  "java.debug.settings.onBuildFailureProceed": true,
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "xprotocol",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33060,
+      "driver": "MySQL",
+      "username": "root",
+      "database": "vartual_atm",
+      "password": "sakib",
+      "connectionTimeout": 30,
+      "name": "MySQL Local"
+    }
+  ]
+}
