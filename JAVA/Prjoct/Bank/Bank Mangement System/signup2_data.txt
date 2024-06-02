@@ -2,3 +2,5 @@
  7161,Sikh,SC,<1,50,000,Graduate,Self-Employed,ss,a,Yes,Yes
  8102,Muslim,General,Null,Non-Graduate,Salaried,s,s,Yes,No
  2212,Muslim,OBC,<1,50,000,Post-Graduate,Self-Employed,s,s,Yes,Yes
+ 7990,Muslim,General,Null,Non-Graduate,Salaried,s,s,Yes,No
+ 3558,Muslim,SC,<1,50,000,Non-Graduate,Salaried,s,s,Yes,No
