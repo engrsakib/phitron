@@ -1,11 +1,12 @@
 package Vartual_ATM;
 
-//import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.rmi.server.ExportException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class Signup3 extends JFrame implements ActionListener {
@@ -16,7 +17,6 @@ public class Signup3 extends JFrame implements ActionListener {
     String formno;
 
     Signup3(String formno) {
-
         this.formno = formno;
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
@@ -26,7 +26,6 @@ public class Signup3 extends JFrame implements ActionListener {
         image.setBounds(150, 5, 100, 100);
         add(image);
 
-        //page number
         JLabel l1 = new JLabel("Page 3");
         l1.setFont(new Font("Roboto", Font.ITALIC, 12));
         l1.setBounds(730, 620, 600, 30);
@@ -77,7 +76,6 @@ public class Signup3 extends JFrame implements ActionListener {
         l4.setBounds(100, 300, 200, 30);
         add(l4);
 
-        //card number
         JLabel l5 = new JLabel("(Your 16-digit Card Number)");
         l5.setFont(new Font("Roboto", Font.BOLD, 12));
         l5.setBounds(100, 330, 200, 20);
@@ -88,12 +86,11 @@ public class Signup3 extends JFrame implements ActionListener {
         l6.setBounds(330, 300, 250, 30);
         add(l6);
 
-        JLabel l7 = new JLabel("(It would appear on atm card/cheque Book and Statements)");
+        JLabel l7 = new JLabel("(It would appear on ATM card/cheque book and statements)");
         l7.setFont(new Font("Roboto", Font.BOLD, 12));
         l7.setBounds(330, 330, 500, 20);
         add(l7);
 
-        //pin
         JLabel l8 = new JLabel("PIN:");
         l8.setFont(new Font("Roboto", Font.BOLD, 18));
         l8.setBounds(100, 370, 200, 30);
@@ -109,76 +106,64 @@ public class Signup3 extends JFrame implements ActionListener {
         l10.setBounds(100, 400, 200, 20);
         add(l10);
 
-        //service
         JLabel l11 = new JLabel("Services Required:");
         l11.setFont(new Font("Roboto", Font.BOLD, 18));
         l11.setBounds(100, 450, 200, 30);
         add(l11);
 
-        //atm
         c1 = new JCheckBox("ATM CARD");
         c1.setBackground(new Color(252, 237, 194));
         c1.setFont(new Font("Roboto", Font.BOLD, 16));
         c1.setBounds(100, 500, 200, 30);
         add(c1);
 
-        //internet
         c2 = new JCheckBox("Internet Banking");
         c2.setBackground(new Color(252, 237, 194));
         c2.setFont(new Font("Roboto", Font.BOLD, 16));
         c2.setBounds(350, 500, 200, 30);
         add(c2);
 
-        // Mobile Bank
         c3 = new JCheckBox("Mobile Banking");
         c3.setBackground(new Color(252, 237, 194));
         c3.setFont(new Font("Roboto", Font.BOLD, 16));
         c3.setBounds(100, 550, 200, 30);
         add(c3);
 
-        // email alert
         c4 = new JCheckBox("EMAIL Alerts");
         c4.setBackground(new Color(252, 237, 194));
         c4.setFont(new Font("Roboto", Font.BOLD, 16));
         c4.setBounds(350, 550, 200, 30);
         add(c4);
 
-        // cheque
         c5 = new JCheckBox("Cheque Book");
         c5.setBackground(new Color(252, 237, 194));
         c5.setFont(new Font("Roboto", Font.BOLD, 16));
         c5.setBounds(100, 600, 200, 30);
         add(c5);
 
-
-        //estatemnt
         c6 = new JCheckBox("E-Statement");
         c6.setBackground(new Color(252, 237, 194));
         c6.setFont(new Font("Roboto", Font.BOLD, 16));
         c6.setBounds(350, 600, 200, 30);
         add(c6);
-        
-        
+
         JCheckBox c7 = new JCheckBox(
-                "I here by decleares that the above entered details correct to the best of my knlowledge.", true);
+                "I hereby declare that the above entered details are correct to the best of my knowledge.", true);
         c7.setBackground(new Color(252, 237, 194));
         c7.setFont(new Font("Roboto", Font.BOLD, 12));
         c7.setBounds(100, 680, 600, 20);
         add(c7);
 
-        //form no
         JLabel l12 = new JLabel("Form No : ");
         l12.setFont(new Font("Roboto", Font.BOLD, 14));
         l12.setBounds(700, 10, 100, 30);
         add(l12);
 
-        //formno
         JLabel l13 = new JLabel(formno);
         l13.setFont(new Font("Roboto", Font.BOLD, 14));
         l13.setBounds(760, 10, 60, 30);
         add(l13);
 
-        //submit
         s = new JButton("Submit");
         s.setFont(new Font("Roboto", Font.BOLD, 14));
         s.setBackground(Color.BLACK);
@@ -187,7 +172,6 @@ public class Signup3 extends JFrame implements ActionListener {
         s.addActionListener(this);
         add(s);
 
-        //cancel
         c = new JButton("Cancel");
         c.setFont(new Font("Roboto", Font.BOLD, 14));
         c.setBackground(Color.BLACK);
@@ -196,7 +180,6 @@ public class Signup3 extends JFrame implements ActionListener {
         c.addActionListener(this);
         add(c);
 
-        // background
         getContentPane().setBackground(new Color(252, 237, 194));
         setSize(850, 800);
         setLayout(null);
@@ -224,44 +207,45 @@ public class Signup3 extends JFrame implements ActionListener {
         long first3 = (ran.nextLong() % 9000L) + 1000L;
         String pin = "" + Math.abs(first3);
 
-        String fac = "";
+        StringBuilder fac = new StringBuilder();
         if (c1.isSelected()) {
-            fac = fac + "ATM CARD ";
-        } else if (c2.isSelected()) {
-            fac = fac + "Internet Banking";
-        } else if (c3.isSelected()) {
-            fac = fac + "Mobile Banking";
-        } else if (c4.isSelected()) {
-            fac = fac + "EMAIL Alerts";
-        } else if (c5.isSelected()) {
-            fac = fac + "Cheque Book";
-        } else if (c6.isSelected()) {
-            fac = fac + "E-Statement";
+            fac.append("ATM CARD ");
+        }
+        if (c2.isSelected()) {
+            fac.append("Internet Banking ");
+        }
+        if (c3.isSelected()) {
+            fac.append("Mobile Banking ");
+        }
+        if (c4.isSelected()) {
+            fac.append("EMAIL Alerts ");
+        }
+        if (c5.isSelected()) {
+            fac.append("Cheque Book ");
+        }
+        if (c6.isSelected()) {
+            fac.append("E-Statement ");
         }
 
         try {
             if (e.getSource() == s) {
-                if (atype.equals("")) {
+                if (atype == null || atype.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Fill all the fields");
                 } else {
-                    Connn c1 = new Connn();
-                    String q1 = "insert into signupthree values('" + formno + "', '" + atype + "','" + cardno + "','"
-                            + pin + "','" + fac + "')";
-                    String q2 = "insert into login values('" + formno + "','" + cardno + "','" + pin + "')";
-                    c1.statement.executeUpdate(q1);
-                    c1.statement.executeUpdate(q2);
-                    JOptionPane.showMessageDialog(null, "Card Number : " + cardno + "\n Pin : " + pin);
-                    // new Deposit(pin);
+                    BufferedWriter writer = new BufferedWriter(new FileWriter("signup3_data.txt", true));
+                    writer.write(formno + "," + atype + "," + cardno + "," + pin + "," + fac.toString().trim());
+                    writer.newLine();
+                    writer.close();
+                    JOptionPane.showMessageDialog(null, "Card Number: " + cardno + "\nPIN: " + pin);
                     setVisible(false);
                 }
             } else if (e.getSource() == c) {
                 System.exit(0);
             }
 
-        } catch (Exception E) {
-            E.printStackTrace();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
         }
-
     }
 
     public static void main(String[] args) {

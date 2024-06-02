@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class signup extends JFrame implements ActionListener {
@@ -29,7 +32,7 @@ public class signup extends JFrame implements ActionListener {
         add(image);
 
         // Form number
-        JLabel l1 = new JLabel("Form No : ");
+        JLabel l1 = new JLabel("Form No : " + first);
         l1.setFont(new Font("Roboto", Font.BOLD, 14));
         l1.setBounds(700, 10, 100, 30);
         add(l1);
@@ -186,7 +189,6 @@ public class signup extends JFrame implements ActionListener {
         setSize(850, 800);
         setLocation(360, 40);
         setVisible(true);
-
     }
 
     @Override
@@ -218,22 +220,21 @@ public class signup extends JFrame implements ActionListener {
         String state = textState.getText();
 
         try {
-            if (textName.getText().equals("")) {
+            if (name.equals("") || fname.equals("") || dob.equals("") || gender == null || email.equals("") || marital == null || address.equals("") || city.equals("") || pincode.equals("") || state.equals("")) {
                 JOptionPane.showMessageDialog(null, "Fill all the fields");
             } else {
-                Connn c = new Connn();
-                String q = "insert into signup values('" + formno + "', '" + name + "','" + fname + "','" + dob + "','"
-                        + gender + "','" + email + "','" + marital + "', '" + address + "', '" + city + "','" + pincode
-                        + "','" + state + "' )";
-                c.statement.executeUpdate(q);
+                // Writing data to a file
+                BufferedWriter writer = new BufferedWriter(new FileWriter("signup_data.txt", true));
+                writer.write(formno + "," + name + "," + fname + "," + dob + "," + gender + "," + email + "," + marital + "," + address + "," + city + "," + pincode + "," + state);
+                writer.newLine();
+                writer.close();
+                JOptionPane.showMessageDialog(null, "Data saved successfully!");
                 new Signup2(formno);
                 setVisible(false);
             }
-
-        } catch (Exception E) {
-            E.printStackTrace();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
         }
-
     }
 
     public static void main(String[] args) {

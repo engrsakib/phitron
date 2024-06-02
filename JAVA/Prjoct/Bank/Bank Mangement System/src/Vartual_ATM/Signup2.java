@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Signup2 extends JFrame implements ActionListener {
     JComboBox<String> comboBox, comboBox2, comboBox3, comboBox4, comboBox5;
@@ -102,7 +105,7 @@ public class Signup2 extends JFrame implements ActionListener {
         // PAN
         JLabel l8 = new JLabel("Birth Certificate Number : ");
         l8.setFont(new Font("Roboto", Font.BOLD, 18));
-        l8.setBounds(100, 390, 150, 30);
+        l8.setBounds(100, 390, 250, 30);
         add(l8);
 
         textPan = new JTextField();
@@ -209,19 +212,18 @@ public class Signup2 extends JFrame implements ActionListener {
             if (textPan.getText().equals("") || textAadhar.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Fill all the fields");
             } else {
-                Connn c = new Connn();
-                String q = "insert into Signuptwo values('" + formno + "', '" + rel + "', '" + cate + "','" + inc
-                        + "','" + edu + "','" + occ + "','" + pan + "','" + addhar + "','" + scitizen + "','" + eAccount
-                        + "')";
-                c.statement.executeUpdate(q);
+                // Writing data to a file
+                BufferedWriter writer = new BufferedWriter(new FileWriter("signup2_data.txt", true));
+                writer.write(formno + "," + rel + "," + cate + "," + inc + "," + edu + "," + occ + "," + pan + "," + addhar + "," + scitizen + "," + eAccount);
+                writer.newLine();
+                writer.close();
+                JOptionPane.showMessageDialog(null, "Data saved successfully!");
                 new Signup3(formno);
                 setVisible(false);
             }
-
-        } catch (Exception E) {
-            E.printStackTrace();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
         }
-
     }
 
     public static void main(String[] args) {
