@@ -1,0 +1,5 @@
+Assending Order
+10 11 12 22 36 98 125 500 
+dessending Order
+500 125 98 36 22 12 11 10 
+Not heare

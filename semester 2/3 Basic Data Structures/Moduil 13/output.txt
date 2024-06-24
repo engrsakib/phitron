@@ -1,0 +1,3 @@
+COUNT: 9
+Cout leef: 3
+Max Height: 5
