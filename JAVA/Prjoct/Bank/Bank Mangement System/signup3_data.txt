@@ -1,3 +1,10 @@
  8102,Saving Account,1409963048103754,3204,ATM CARD E-Statement
  2212,Fixed Deposit Account,1409963044157435,5979,ATM CARD E-Statement
 ,Saving Account,1409962949322664,9746,ATM CARD Mobile Banking E-Statement
+,Saving Account,1409963072205806,4694,ATM CARD EMAIL Alerts E-Statement
+,Current Account,1409962920594221,5340,ATM CARD E-Statement
+,Saving Account,1409963018089371,5713,ATM CARD Internet Banking Mobile Banking EMAIL Alerts Cheque Book E-Statement
+,Saving Account,1409963013508644,1517,ATM CARD
+,Recurring Deposit Account,1409962948540759,6249,ATM CARD Mobile Banking
+ 9815,Saving Account,1409963037681547,8909,ATM CARD
+ 3455,Saving Account,1409963086868203,1008,Internet Banking

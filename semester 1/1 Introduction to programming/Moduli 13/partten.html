@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS for styling the pattern */
+        #output {
+            font-family: monospace;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #output.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Pattern Generator</h1>
+    <label for="n">Enter a number: </label>
+    <input type="number" id="n" min="1" step="1">
+    <button id="generateButton">Generate Pattern</button>
+    <pre id="output"></pre>
+
+    <script>
+        // JavaScript for generating the pattern and applying CSS animations
+        function generatePattern() {
+            const n = parseInt(document.getElementById("n").value);
+            let output = "";
+
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n - i + 1; j++) {
+                    output += j + " ";
+                }
+                output += "\n";
+            }
+
+            const outputElement = document.getElementById("output");
+            outputElement.textContent = output;
+            outputElement.classList.add("show");
+        }
+
+        // JavaScript for generating the pattern on button click
+        document.getElementById("generateButton").addEventListener("click", function () {
+            generatePattern();
+        });
+    </script>
+</body>
+</html>

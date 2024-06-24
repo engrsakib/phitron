@@ -11,13 +11,12 @@ import java.util.Date;
 
 public class Deposit extends JFrame implements ActionListener {
     String pin;
+    String card;
     TextField textField;
     JButton b1, b2;
 
-    Deposit(String pin) {
-        this.pin = pin;
-
-        // Reusing the same frame design
+    // Method to set up frame design
+    private void setupFrameDesign() {
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/atm2.png"));
         Image i2 = i1.getImage().getScaledInstance(1550, 830, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
@@ -58,6 +57,13 @@ public class Deposit extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    // Updated constructor to accept pin and card parameters
+    Deposit(String pin, String card) {
+        this.pin = pin;
+        this.card = card;
+        setupFrameDesign(); // Call the frame design setup method
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
@@ -68,17 +74,22 @@ public class Deposit extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Please enter the amount you want to deposit");
                 } else {
                     // Save deposit details to a file
-                    BufferedWriter writer = new BufferedWriter(new FileWriter(pin + "_deposit.txt", true));
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(card + "_deposit.txt", true));
                     writer.write("Date: " + date + ", Amount: " + amount);
                     writer.newLine();
                     writer.close();
-                    JOptionPane.showMessageDialog(null, "Rs. " + amount + " deposited successfully");
+
+                    // Display card number and deposit amount in a dialog box
+                    String message = "Card Number: " + card + "\nDeposit Amount: Tk. " + amount;
+                    JOptionPane.showMessageDialog(null, message, "Deposit Details", JOptionPane.INFORMATION_MESSAGE);
+
                     setVisible(false);
-                    new MainClass(pin);
+
                 }
             } else if (e.getSource() == b2) {
                 setVisible(false);
-                new MainClass(pin);
+                // Navigate back to Signup3 class with pin and card parameters
+                new Signup3(pin); // Ensure Signup3 constructor accepts pin and card parameters
             }
         } catch (IOException exception) {
             exception.printStackTrace();
@@ -86,6 +97,6 @@ public class Deposit extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Deposit("");
+        new Deposit("", ""); // Pass empty strings for pin and card, or provide actual values if needed
     }
 }

@@ -19,7 +19,7 @@ public class log_in extends JFrame implements ActionListener {
     JButton button3;
 
     log_in() {
-        super("Vartual ATM SYSTEM");
+        super("Virtual ATM SYSTEM");
         // Logo section
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
         Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
@@ -115,6 +115,8 @@ public class log_in extends JFrame implements ActionListener {
                     if (parts.length >= 4 && parts[2].equals(cardno) && parts[3].equals(pin)) {
                         JOptionPane.showMessageDialog(null, "Login Successful");
                         found = true;
+                        new main_class(cardno); // Pass account number to main_Class
+                        setVisible(false); // Close the login window
                         break;
                     }
                 }

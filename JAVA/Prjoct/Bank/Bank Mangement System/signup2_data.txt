@@ -4,3 +4,6 @@
  2212,Muslim,OBC,<1,50,000,Post-Graduate,Self-Employed,s,s,Yes,Yes
  7990,Muslim,General,Null,Non-Graduate,Salaried,s,s,Yes,No
  3558,Muslim,SC,<1,50,000,Non-Graduate,Salaried,s,s,Yes,No
+,Muslim,General,Null,Non-Graduate,Salaried,s,s,Yes,No
+ 9815,Muslim,General,Null,Non-Graduate,Salaried,s,s,Yes,No
+ 3455,Muslim,General,Null,Non-Graduate,Salaried,g,g,Yes,Yes
